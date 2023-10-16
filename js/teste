@@ -1,0 +1,39 @@
+// Gestionnaire d'événement pour les liens
+document.querySelectorAll(".popup-link").forEach(function (link) {
+    link.addEventListener("click", function (event) {
+        event.preventDefault();
+
+        // Récupérer la valeur de l'attribut data-popup
+        const popupId = link.getAttribute("data-popup");
+
+        // Appeler la fonction pour afficher le popup spécifié
+        afficherPopup(popupId);
+    });
+});
+
+// Fonction pour afficher le popup avec une transition d'opacité
+function afficherPopup(popupId) {
+    const modal = document.getElementById(popupId);
+    modal.style.opacity = 0; // Opacité initiale à 0
+    modal.style.display = "flex"; // Afficher le popup
+    setTimeout(function () {
+        modal.style.opacity = 1; // Animer l'opacité à 1
+    }, 10); // Vous pouvez ajuster la valeur en millisecondes selon votre préférence
+}
+
+// Fonction pour fermer le popup avec une transition d'opacité
+function fermerPopup() {
+    const modal = document.getElementById(popupId);
+    modal.style.opacity = 0; // Animer l'opacité à 0
+    setTimeout(function () {
+        modal.style.display = "none"; // Cacher le popup
+    }, 300); // Durée de la transition en millisecondes
+}
+
+
+// // Fonction pour fermer la fenêtre modale
+// function fermerPopup() {
+//     document.querySelectorAll(".modal").forEach(function (modal) {
+//         modal.style.display = "none";
+//     });
+// }
