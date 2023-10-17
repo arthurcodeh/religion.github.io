@@ -113,6 +113,29 @@ body{
         width: 60px;
         gap: 12px;
     }
+    .popup-link h2{
+        text-shadow: 0;
+        transition: text-shadow 0.9ms ease-in-out;
+    }
+    .popup-link h2:hover {
+        text-shadow: 1px 2px 7px black;
+    }
+@media screen and (max-width: 1000px) {
+    body{
+        height: 100%;
+    }
+    .parent{
+        display: block;
+    }
+    .passions, .objectifs, .famille, .option, .parcours, .autres{
+        height: 10vh;
+    }
+    #maPopup .close{
+        top: 55px!important;
+        right: 50px!important;
+        scale: 10!important;
+    }
+}
 
 /********************************************/
 /*poPup*/
@@ -150,10 +173,10 @@ body{
 
 #maPopup .close {
     position: absolute;
-    top: 10px;
-    right: 15px;
+    top: 20px;
+    right: 30px;
     cursor: pointer;
-    scale: 2;
+    scale: 5;
     color: red;
 }
 
